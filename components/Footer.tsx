@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className="bg-[#f3f6fb] h-40 w-full shrink-0 flex">
+    <div className="bg-[#f3f6fb] h-32 w-full shrink-0 flex">
       <div className="w-[95%] md:w-[70%] mx-auto flex items-center gap-5 md:gap-20">
         <div className="space-y-2">
           <h1 className='text-sm font-semibold text-[color:var(--aiortho-gray-500)]'>Copyright © AIOrtho. All Rights Reserved.</h1>

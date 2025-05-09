@@ -7,6 +7,7 @@ type OrthoInputProps = {
   label?: string;
   placeholder?: string;
   error?: string;
+  apiError?: string;
   registration?: UseFormRegisterReturn;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value?: string;
@@ -15,6 +16,9 @@ type OrthoInputProps = {
   rightIcon?: React.ReactNode;
   onRightIconClick?: () => void;
   width?: string;
+  maxLength?: number;
+  minLength?: number;
+  className?: string;
 };
 
 const OrthoInput: FC<OrthoInputProps> = ({
@@ -29,6 +33,9 @@ const OrthoInput: FC<OrthoInputProps> = ({
   rightIcon,
   onRightIconClick,
   width = "w-full",
+  apiError,
+  maxLength,
+  minLength,
 }) => {
   return (
     <div className={`space-y-2 ${width}`}>
@@ -45,7 +52,9 @@ const OrthoInput: FC<OrthoInputProps> = ({
           type={type}
           placeholder={placeholder}
           className={`w-full placeholder:text-[color:var(--aiortho-gray-400)] h-10 ${
-            error ? "border-[1px] border-[color:var(--aiortho-danger)]" : ""
+            error
+              ? "border-[1px] border-[color:var(--aiortho-danger)]"
+              : ""
           }`}
           {...registration}
           onChange={(e) => {
@@ -53,6 +62,8 @@ const OrthoInput: FC<OrthoInputProps> = ({
             onChange && onChange(e);
           }}
           value={value}
+          maxLength={maxLength}
+          minLength={minLength}
         />
         {rightIcon && (
           <div
@@ -64,8 +75,13 @@ const OrthoInput: FC<OrthoInputProps> = ({
         )}
       </div>
       {error && (
-        <p className="text-[color:var(--aiortho-danger)] text-xs mt-1">
+        <p className="font-normal text-[color:var(--aiortho-danger)] text-xs mt-1">
           {error}
+        </p>
+      )}
+      {apiError && (
+        <p className="font-normal text-[color:var(--aiortho-danger)] text-xs mt-1">
+          {apiError}
         </p>
       )}
     </div>

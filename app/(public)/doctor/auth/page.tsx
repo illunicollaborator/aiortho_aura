@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -32,6 +33,8 @@ const DoctorAuth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
 
+  const router = useRouter();
+
   const {
     register,
     handleSubmit,
@@ -56,7 +59,7 @@ const DoctorAuth = () => {
   return (
     <div className="flex-1 flex flex-col items-center pt-10">
       <div className="w-[95%] md:w-[40%] mx-auto">
-        <div className="space-y-4 text-center">
+        <div className="space-y-4">
           <h1 className="font-bold text-3xl text-[color:var(--aiortho-gray-900)]">
             의사 로그인
           </h1>
@@ -65,7 +68,7 @@ const DoctorAuth = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-10">
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-10 mt-8">
           <OrthoInput
             label="이메일"
             placeholder="이메일을 입력하세요"
@@ -88,22 +91,22 @@ const DoctorAuth = () => {
           <div className="flex justify-between items-center w-full ">
             <div className="flex items-center gap-2">
               <Checkbox
-                className="w-4 h-4 border-[1px] data-[state=checked]:bg-[color:var(--aiortho-gray-200)]"
+                className="w-4 h-4 data-[state=checked]:bg-[color:var(--aiortho-primary)]"
                 checked={isChecked}
                 onCheckedChange={(e) => setIsChecked(!isChecked)}
               />
-              <p className="font-bold text-sm text-[color:var(--aiortho-gray-700))]">
+              <p className="font-medium text-sm text-[color:var(--aiortho-gray-700))]">
                 자동 로그인
               </p>
             </div>
-            <p className="cursor-pointer text-[color:var(--aiortho-primary)] font-nomral text-sm">
+            <p onClick={()=>router.push("/doctor/auth/find-id")} className="cursor-pointer text-[color:var(--aiortho-primary)] font-nomral text-[13px]">
               아이디 · 비밀번호 찾기 &nbsp;{">"}
             </p>
           </div>
 
           <Button
             type="submit"
-            className="w-full bg-[color:var(--aiortho-primary)] hover:bg-[color:var(--aiortho-primary)] text-white py-5 rounded-lg"
+            className="w-full bg-[color:var(--aiortho-primary)] hover:bg-[color:var(--aiortho-primary)] text-white py-5 rounded-full"
           >
             로그인
           </Button>

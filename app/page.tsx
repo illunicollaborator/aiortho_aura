@@ -15,11 +15,11 @@ const Home = () => {
       <div className="flex gap-5 items-center">
         <Button
           onClick={() => router.push("/doctor/auth")}
-          className="text-white bg-[color:var(--aiortho-primary)] hover:bg-[color:var(--aiortho-primary)] p-6 rounded-lg cursor-pointer"
+          className="text-white bg-[color:var(--aiortho-primary)] hover:bg-[color:var(--aiortho-primary)] p-6 rounded-lg cursor-pointer w-[168px]"
         >
           의사로 접속
         </Button>
-        <Button className="text-white bg-[color:var(--aiortho-gray-800)] hover:bg-[color:var(--aiortho-gray-800)] p-6 rounded-lg cursor-pointer">
+        <Button className="text-white bg-[color:var(--aiortho-gray-800)] hover:bg-[color:var(--aiortho-gray-800)] p-6 rounded-md cursor-pointer w-[168px]">
           간호사로 접속
         </Button>
       </div>

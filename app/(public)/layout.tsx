@@ -4,9 +4,9 @@ import React, { ReactNode } from "react";
 
 const PublicLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
-    <div className="h-screen flex flex-col overflow-hidden">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <Navbar />
-      <div className="flex-1 overflow-auto">{children}</div>
+      <main className="flex-1">{children}</main>
       <Footer />
     </div>
   );
