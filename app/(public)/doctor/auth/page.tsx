@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Eye, EyeOff } from "lucide-react";
@@ -47,9 +47,8 @@ const DoctorAuth = () => {
     },
   });
 
-  const onSubmit = (data: FormValues) => {
+  const onSubmit: SubmitHandler<FormValues> = (data: FormValues) => {
     console.log(data);
-    // Handle login logic here
   };
 
   const togglePasswordVisibility = () => {
@@ -84,7 +83,13 @@ const DoctorAuth = () => {
             registration={register("password")}
             error={errors.password?.message}
             required
-            rightIcon={showPassword ? <EyeOff size={20} color="#97A8C4" /> : <Eye size={20} color="#97A8C4" />}
+            rightIcon={
+              showPassword ? (
+                <EyeOff size={20} color="#97A8C4" />
+              ) : (
+                <Eye size={20} color="#97A8C4" />
+              )
+            }
             onRightIconClick={togglePasswordVisibility}
           />
 
@@ -99,7 +104,10 @@ const DoctorAuth = () => {
                 자동 로그인
               </p>
             </div>
-            <p onClick={()=>router.push("/doctor/auth/find-id")} className="cursor-pointer text-[color:var(--aiortho-primary)] font-nomral text-[13px]">
+            <p
+              onClick={() => router.push("/doctor/auth/find-id")}
+              className="cursor-pointer text-[color:var(--aiortho-primary)] font-nomral text-[13px]"
+            >
               아이디 · 비밀번호 찾기 &nbsp;{">"}
             </p>
           </div>
@@ -111,7 +119,10 @@ const DoctorAuth = () => {
             로그인
           </Button>
         </form>
-        <p className="font-medium text-center text-sm text-[color:var(--aiortho-gray-800)] my-4 underline cursor-pointer">
+        <p
+          onClick={() => router.push("/doctor/auth/join-membership")}
+          className="font-medium text-center text-sm text-[color:var(--aiortho-gray-800)] my-4 underline cursor-pointer"
+        >
           회원가입
         </p>
       </div>

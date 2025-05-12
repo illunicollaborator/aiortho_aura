@@ -16,7 +16,7 @@ const otpSchema = z.object({
 type FormOtpValues = z.infer<typeof otpSchema>;
 
 const Otp = () => {
-  const [timer, setTimer] = React.useState(30);
+  const [timer, setTimer] = React.useState(300);
   const [isActive, setIsActive] = React.useState(true);
   let error = true;
 
@@ -81,7 +81,8 @@ const Otp = () => {
             registration={register("otp")}
             error={errors.otp?.message}
             maxLength={6}
-            apiError={error && "인증 번호가 일치하지 않아요"}
+            apiResponse={error}
+            apiResponseMessage={"인증 번호가 일치하지 않아요"}
             required
             rightIcon={
               <div className="flex items-center gap-2 md:gap-5 py-2">

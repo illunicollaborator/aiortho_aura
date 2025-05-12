@@ -103,7 +103,7 @@ const DoctorAuthFindId = () => {
               <OrthoInput
                 label="휴대폰 번호"
                 placeholder="휴대폰 번호을 입력해주세요"
-                type="number"
+                // type="number"
                 registration={registerId("phoneNumber")}
                 error={errorsId.phoneNumber?.message}
                 required
@@ -141,7 +141,7 @@ const DoctorAuthFindId = () => {
               <OrthoInput
                 label="휴대폰 번호"
                 placeholder="휴대폰 번호을 입력해주세요"
-                type="number"
+                // type="number"
                 registration={registerPassword("phoneNumber")}
                 error={errorsPassword.phoneNumber?.message}
                 required
