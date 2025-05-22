@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const pretandard = localFont({
   src: "../public/Pretendard-Variable.woff2",
@@ -17,7 +18,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
       <body
       className={`${pretandard.className} antialiased`}
       >
-        {children}
+         {children}
       </body>
     </html>
   );
