@@ -14,20 +14,17 @@ const PasswordField = ({
   validationMessage,
   showValidation = true,
   placeholders,
-  fontSize,
-  colors,
-  fonts,
-  fontWeight,
+  
   ...props
 }) => {
   const [showPassword, setShowPassword] = useState(false);
 
-  const inputStyle = {
-    fontFamily: {fonts},
-    fontWeight: {fontWeight},
-    fontSize: {fontSize},
-    color: {colors},
-  };
+  const inputStyle ={
+           fontFamily: props.fonts,
+                fontWeight: props.fontWeight,
+                fontSize:props.fontSize,
+                color:props.colors
+        }
 
   return (
     <div className="mb-8">

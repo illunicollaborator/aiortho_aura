@@ -5,16 +5,16 @@ const SubmitButton = ({
   children, 
   onClick, 
   className = "", 
+  bgcolor,
   ...props 
 }) => {
   return (
-    <button
-      type="submit"
+    <button style={{backgroundColor:bgcolor}}
+      type={props.type}
       onClick={onClick}
-      className={`w-full rounded-full py-3 px-4 bg-blue-600  text-white ${className}`}
-      {...props}
-    >
-      {children}
+      className={`w-full rounded-full  py-3 px-4  text-white ${className} `}
+     >
+      {props.fieldName}
     </button>
   );
 };

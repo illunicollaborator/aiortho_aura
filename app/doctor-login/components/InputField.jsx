@@ -12,19 +12,16 @@ const InputField = ({
   validationMessage,
   showValidation = true,
   placeholders,
-     fontSize,
-     colors,
-  fonts,
-fontWeight,
-  ...props 
+   
+   ...props 
 }) => {
   return (
-    <div className="mb-8">
+    <div className={`mb-8`}  >
       <label htmlFor={id}  style={{
-           fontFamily: {fonts},
-                fontWeight: {fontWeight},
-                fontSize:{fontSize},
-                color:{colors}
+           fontFamily: props.fonts,
+                fontWeight: props.fontWeight,
+                fontSize:props.fontSize,
+                color:props.colors
         }} className="block text-sm font-medium text-gray-500 mb-3">
         {label}
       </label>
@@ -35,11 +32,11 @@ fontWeight,
         onChange={onChange}
         placeholder={placeholders}
         onBlur={onBlur}
-        style={{
-           fontFamily: {fonts},
-                fontWeight: {fontWeight},
-                fontSize:{fontSize},
-                color:{colors}
+       style={{
+           fontFamily: props.fonts,
+                fontWeight: props.fontWeight,
+                fontSize:props.fontSize,
+                color:props.colors
         }}
         className={`w-full px-3 py-3 border  ${error ? 'border-red-300' : 'border-gray-300'} rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500`}
         {...props}

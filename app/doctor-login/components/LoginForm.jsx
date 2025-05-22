@@ -101,7 +101,7 @@ const LoginForm = () => {
             value={formValues.username}
             placeholders={'아이디를 입력해주세요'}
             fonts={'Pretendard Variable'}
-            fontWeight={400}
+            fontWeight={600}
             fontSize='13px'
             colors='#97A8C4'
             onChange={handleChange}
@@ -121,7 +121,7 @@ const LoginForm = () => {
             name="password"
             label="비밀번호"
             fonts={'Pretendard Variable'}
-            fontWeight={400}
+            fontWeight={600}
             fontSize='13px'
             colors='#97A8C4'
             placeholders='비밀번호를 입력해주세요'
@@ -156,7 +156,7 @@ const LoginForm = () => {
 
           {/* Login Button */}
           <div className="flex items-center flex-col w-[100%] ">
-          <SubmitButton>로그인</SubmitButton>
+          <SubmitButton bgcolor={`#0054A6`} fieldName='로그인' type='submit' /> 
                               <Text fonts={'Pretendard Variable'} fontWeight={400} lines='underline'  TextSize='14px' TextChildrem='회원가입' color='#343F4E' Line_height='40px' paddingLeft='6px' />
 </div>
         </form>

@@ -6,7 +6,7 @@ import LoginForm from "./components/LoginForm"
 function page() {
     return (
         <div className="w-[100vw] flex items-center justify-start flex-col pt-[72px] " style={{ height: 'calc(100vh - 72px)' }} >
-            <div className=' w-full md:w-full lg:w-[40vw] mt-2  px-[4vw] lg:px-[0px]   '>
+            <div className=' w-full md:w-full lg:w-[40vw] mt-2  px-[4vw] lg:px-[0px]    '>
                 <div className="flex ietms-start flex-col">
                     
                     <Text fonts={'Pretendard Variable'} fontWeight={900}  TextSize='30px' TextChildrem='의사 로그인' color='#161621' Line_height='40px' paddingLeft='6px' />
